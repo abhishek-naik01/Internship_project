@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Burger</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background-image: url('img/banner2.png'); background-size: cover; background-position: center;">
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="Menu.html">Menu</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a class="active" href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="book_btn d-none d-xl-block">
+                                    <a href="#">+917745678901</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- Booking Section Start -->
+    <section class="booking-section" style="padding: 50px 0; background-color: rgba(255, 255, 255, 0.8);">
+        <div class="container">
+            <h2 class="text-center mb-4">Book a Table</h2>
+            <form id="bookingForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                            <div id="nameError" class="error text-danger"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div id="emailError" class="error text-danger"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="number" class="form-control" id="phone" name="phone" required>
+                            <div id="phoneError" class="error text-danger"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="date">Reservation Date:</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                            <div id="dateError" class="error text-danger"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="time">Reservation Time:</label>
+                    <select class="form-control" id="time" name="time" required>
+                        <option value="">Select Time</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                        <option value="8:00 PM">8:00 PM</option>
+                    </select>
+                    <div id="timeError" class="error text-danger"></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Book Table</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Booking Section End -->
+
+    <!-- JS for Form Validation -->
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+            
+            // Validate name
+            let name = document.getElementById('name').value;
+            if (name === "") {
+                document.getElementById('nameError').textContent = "Name is required!";
+                isValid = false;
+            } else {
+                document.getElementById('nameError').textContent = "";
+            }
+
+            // Validate email
+            let email = document.getElementById('email').value;
+            let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (email === "" || !emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = "Please enter a valid email!";
+                isValid = false;
+            } else {
+                document.getElementById('emailError').textContent = "";
+            }
+
+            // Validate phone number
+            let phone = document.getElementById('phone').value;
+            if (phone === "" || phone.length < 10) {
+                document.getElementById('phoneError').textContent = "Please enter a valid phone number!";
+                isValid = false;
+            } else {
+                document.getElementById('phoneError').textContent = "";
+            }
+
+            // Validate date
+            let date = document.getElementById('date').value;
+            if (date === "") {
+                document.getElementById('dateError').textContent = "Please select a date!";
+                isValid = false;
+            } else {
+                document.getElementById('dateError').textContent = "";
+            }
+
+            // Validate time
+            let time = document.getElementById('time').value;
+            if (time === "") {
+                document.getElementById('timeError').textContent = "Please select a time!";
+                isValid = false;
+            } else {
+                document.getElementById('timeError').textContent = "";
+            }
+
+            if (isValid) {
+                alert("Your table has been booked successfully!");
+                document.getElementById('bookingForm').reset();
+            }
+        });
+    </script>
+
+</body>
+</html>
